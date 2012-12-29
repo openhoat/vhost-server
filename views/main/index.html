@@ -1,15 +1,14 @@
 <% include ../include/header.html %>
-<div id="contentContainer" class="span1">
-  <div id="webappContainer">
-    <% if (webapps.length > 0) { %>
-      <ul id="webappList">
-        <% webapps.forEach(function(webapp){ %>
-          <li><a href="<%= webapp.url %>" title="<%= webapp.description %>"><%= webapp.name %></a></li>
-        <% }) %>
-      </ul><%
-    } else { %>
-      <%= __('No webapp found') %>,
-    <% } %>
-  </div>
+<div id="contentContainer">
+  <h2><%= __('Available web apps') %></h2>
+  <% if (webapps.length > 0) { %>
+    <ul id="webappList">
+      <% webapps.forEach(function(webapp){ %>
+        <li><a href="<%= webapp.url %>" title="<%= webapp.description %>"><%= webapp.name %></a></li>
+      <% }) %>
+    </ul><%
+  } else { %>
+    <%= __('No webapp found') %>,
+  <% } %>
 </div>
 <% include ../include/footer.html %>
