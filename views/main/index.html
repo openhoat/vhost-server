@@ -5,9 +5,11 @@
     <ul id="webappList">
       <% webapps.forEach(function(webapp){ %>
         <li>
-          <a class="webappLink" href="<%= webapp.url %>" title="<%= webapp.description %>"><%= webapp.name %></a> :
-          <p>description : <%= webapp.description %></p>
-          <p>sources : <a href="<%= webapp.sources %>"><%= webapp.sources %></p>
+          <a class="webappLink" href="<%= webapp.url %>" title="<%= webapp.description %>"><%= webapp.name %></a>
+          <p>
+            description : <%= webapp.description %><br/>
+            sources : <a href="<%= webapp.sources %>"><%= webapp.sources %>
+          </p>
         </li>
       <% }) %>
     </ul><%
