@@ -62,6 +62,7 @@ for (var i = 0; i < appDirs.length; i++) {
           name: appName,
           url: 'http://' + appName + '.' + config.baseDomain + ':' + config.proxyPort,
           description: packageApp.description,
+          sources: packageApp.homepage,
           process: null
         };
       console.log('Starting app :', appName);

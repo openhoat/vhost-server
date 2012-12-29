@@ -4,7 +4,11 @@
   <% if (webapps.length > 0) { %>
     <ul id="webappList">
       <% webapps.forEach(function(webapp){ %>
-        <li><a href="<%= webapp.url %>" title="<%= webapp.description %>"><%= webapp.name %></a> : <%= webapp.description %></li>
+        <li>
+          <a class="webappLink" href="<%= webapp.url %>" title="<%= webapp.description %>"><%= webapp.name %></a> :
+          <p>description : <%= webapp.description %></p>
+          <p>sources : <a href="<%= webapp.sources %>"><%= webapp.sources %></p>
+        </li>
       <% }) %>
     </ul><%
   } else { %>
