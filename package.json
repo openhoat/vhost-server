@@ -1,0 +1,34 @@
+{
+  "name":"vhost-server",
+  "version":"0.0.1",
+  "description":"Virtual host proxy for nodejs apps and index webapp",
+  "homepage": "https://github.com/openhoat/vhost-server",
+  "main":"run.js",
+  "author":{
+    "name":"Olivier Penhoat",
+    "email":"openhoat@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/openhoat/vhost-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openhoat/vhost-server/issues"
+  },
+  "licenses": [
+    {
+      "type": "EUPL",
+      "url": "https://github.com/openhoat/vhost-server/blob/master/EUPL-1.1.txt"
+    }
+  ],
+  "dependencies":{
+    "http-proxy":"0.8.7",
+    "wbpjs":"~1.0.9"
+  },
+  "devDependencies":{
+    "grunt-contrib-clean":"0.3.1",
+    "jasmine-node":"1.0.26",
+    "grunt-jasmine-node":"0.0.4",
+    "grunt-jslint":"0.2.2"
+  }
+}

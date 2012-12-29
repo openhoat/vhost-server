@@ -1,0 +1,16 @@
+#!/usr/bin/env /opt/node/bin/node
+/*
+# chkconfig: 235 99 10
+# description: Start or stop the nodejs server
+#
+### BEGIN INIT INFO
+# Provides: nodejs-server
+# Required-Start: $network $syslog
+# Required-Stop: $network
+# Default-Start: 2 3 5
+# Default-Stop: 0 1 6
+# Description: Start or stop the nodejs server
+### END INIT INFO
+ */
+
+require(require('path').join(__dirname, '../lib/service.js'));
