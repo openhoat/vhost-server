@@ -2,7 +2,7 @@ var path = require('path')
   , fs = require('fs')
   , http = require('http')
   , httpProxy = require('http-proxy')
-  , webapps = require('./models/webapps.js');
+  , webapps = require(path.join('.', 'lib', 'index-webapp', 'models', 'webapps.js'));
 
 try {
   process.setuid('node');
@@ -34,7 +34,6 @@ function killChilds(signal) {
     webapps.splice(0, 1);
   }
 }
-;
 
 process.on('SIGHUP', killChilds);
 process.on('SIGINT', killChilds);
