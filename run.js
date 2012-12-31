@@ -2,7 +2,7 @@ var path = require('path')
   , fs = require('fs')
   , http = require('http')
   , httpProxy = require('http-proxy')
-  , webapps = require(path.join('.', 'lib', 'index-webapp', 'models', 'webapps.js'));
+  , webapps = require(path.join(__dirname, 'lib', 'index-webapp', 'models', 'webapps.js'));
 
 try {
   process.setuid('node');
