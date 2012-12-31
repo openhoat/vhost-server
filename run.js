@@ -77,6 +77,7 @@ for (var i = 0; i < appDirs.length; i++) {
       } else {
         appPort = appConfig.port;
       }
+      console.log('app port :', appPort);
       proxyRouter[appName + '.' + config.baseDomain] = '127.0.0.1:' + appPort;
       webapps.push(webapp);
     }
