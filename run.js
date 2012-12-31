@@ -74,7 +74,7 @@ for (var i = 0; i < appDirs.length; i++) {
       });
       var appPort;
       if (appConfig.port === undefined) {
-        appPort = appConfig.plugins.wbpjs - mvc.config.port;
+        appPort = appConfig.plugins['wbpjs-mvc'].config.port;
       } else {
         appPort = appConfig.port;
       }
