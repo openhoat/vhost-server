@@ -6,17 +6,17 @@ var path = require('path')
 
 try {
   process.setuid('node');
-} catch(err) {
+} catch (err) {
   console.log('Error :', err);
 }
 
 var config = {
-  nodeBinDir: path.dirname(process.execPath),
-  nodeCmdName: 'node',
-  nodeAppRootPath: path.join(__dirname, '..'),
-  baseDomain: 'valtech-training.fr',
-  proxyPort: 3000,
-  appsToScan: null
+  nodeBinDir:path.dirname(process.execPath),
+  nodeCmdName:'node',
+  nodeAppRootPath:path.join(__dirname, '..'),
+  baseDomain:'valtech-training.fr',
+  proxyPort:3000,
+  appsToScan:null
 };
 
 var proxyRouter = {}
@@ -24,8 +24,8 @@ var proxyRouter = {}
   , child_process = require('child_process')
   , nodeCmd = path.join(config.nodeBinDir, config.nodeCmdName);
 
-function killChilds(signal){
-  while(webapps.length > 0) {
+function killChilds(signal) {
+  while (webapps.length > 0) {
     var webapp = webapps[0];
     if (webapp.process !== null) {
       console.log('Stopping app :', webapp.name);
@@ -33,7 +33,8 @@ function killChilds(signal){
     }
     webapps.splice(0, 1);
   }
-};
+}
+;
 
 process.on('SIGHUP', killChilds);
 process.on('SIGINT', killChilds);
@@ -59,18 +60,24 @@ for (var i = 0; i < appDirs.length; i++) {
       var packageApp = require(appPackageFile)
         , appConfig = require(appConfigFile)
         , webapp = {
-          name: appName,
-          url: 'http://' + appName + '.' + config.baseDomain + ':' + config.proxyPort,
-          description: packageApp.description,
-          sources: packageApp.homepage,
-          process: null
+          name:appName,
+          url:'http://' + appName + '.' + config.baseDomain + ':' + config.proxyPort,
+          description:packageApp.description,
+          sources:packageApp.homepage,
+          process:null
         };
       console.log('Starting app :', appName);
       webapp.process = child_process.spawn(nodeCmd, [ appMainFile ], {
-        cwd: appDir, 
-        detached: true,
-        uid: process.getuid()
+        cwd:appDir,
+        detached:true,
+        uid:process.getuid()
       });
+      var appPort;
+      if (appConfig.port === undefined) {
+        appPort = appConfig.plugins.wbpjs - mvc.config.port;
+      } else {
+        appPort = appConfig.port;
+      }
       proxyRouter[appName + '.' + config.baseDomain] = '127.0.0.1:' + appConfig.port;
       webapps.push(webapp);
     }
