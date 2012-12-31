@@ -15,6 +15,7 @@ var config = {
   nodeCmdName:'node',
   nodeAppRootPath:path.join(__dirname, '..'),
   baseDomain:'valtech-training.fr',
+//  baseDomain:'localdomain',
   proxyPort:3000,
   appsToScan:null
 };
@@ -23,6 +24,16 @@ var proxyRouter = {}
   , appDirs
   , child_process = require('child_process')
   , nodeCmd = path.join(config.nodeBinDir, config.nodeCmdName);
+
+function getAppPort(appConfig) {
+  var result;
+  if (appConfig.port === undefined) {
+    result = appConfig.plugins['wbpjs-mvc'].config.port;
+  } else {
+    result = appConfig.port;
+  }
+  return result;
+}
 
 function killChilds(signal) {
   while (webapps.length > 0) {
@@ -71,13 +82,7 @@ for (var i = 0; i < appDirs.length; i++) {
         detached:true,
         uid:process.getuid()
       });
-      var appPort;
-      if (appConfig.port === undefined) {
-        appPort = appConfig.plugins['wbpjs-mvc'].config.port;
-      } else {
-        appPort = appConfig.port;
-      }
-      console.log('app port :', appPort);
+      var appPort = getAppPort(appConfig);
       proxyRouter[appName + '.' + config.baseDomain] = '127.0.0.1:' + appPort;
       webapps.push(webapp);
     }
@@ -86,7 +91,8 @@ for (var i = 0; i < appDirs.length; i++) {
 
 console.log('Create index web app');
 var indexWebappConfig = require(path.join(__dirname, 'lib', 'index-webapp', 'config.js'));
-proxyRouter[config.baseDomain] = '127.0.0.1:' + indexWebappConfig.port;
+var indexWebappPort = getAppPort(indexWebappConfig);
+proxyRouter[config.baseDomain] = '127.0.0.1:' + indexWebappPort;
 require(path.join(__dirname, 'lib', 'index-webapp', 'app.js'));
 
 console.log('Create proxy server');
