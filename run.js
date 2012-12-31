@@ -85,9 +85,9 @@ for (var i = 0; i < appDirs.length; i++) {
 }
 
 console.log('Create index web app');
-var indexWebappConfig = require('./lib/index-webapp/config.js');
+var indexWebappConfig = require(path.join(__dirname, 'lib', 'index-webapp', 'config.js'));
 proxyRouter[config.baseDomain] = '127.0.0.1:' + indexWebappConfig.port;
-require('./lib/index-webapp/app.js');
+require(path.join(__dirname, 'lib', 'index-webapp', 'app.js'));
 
 console.log('Create proxy server');
 var proxyServer = httpProxy.createServer({
