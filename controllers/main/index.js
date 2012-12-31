@@ -1,11 +1,13 @@
 var wbp = require('wbpjs')
   , config = wbp.config
-  , webapps = require(config.baseDir + '/models/webapps.js');;
+  , webapps = require(wbp.findAppFile('models','webapps.js'))
+  , mvcPlugin = wbp.findPlugin('wbpjs-mvc')
+  , viewsPlugin = mvcPlugin.viewsPlugin;
 
 module.exports = {
   index:function (req, res) {
-    wbp.render(res, function (type) {
-      var view = wbp.getWebView(req, 'main/index', type);
+    wbp.viewsPlugin(res, function (type) {
+      var view = viewsPlugin.getWebView(req, 'main/index', type);
       res.render(view, { webapps: webapps });
     });
   }
