@@ -16,7 +16,7 @@ var config = {
   nodeAppRootPath:path.join(__dirname, '..'),
   baseDomain:'valtech-training.fr',
   proxyPort:3000,
-  appsToScan:null
+  appsToScan:['ifs']
 };
 
 var proxyRouter = {}
@@ -78,7 +78,7 @@ for (var i = 0; i < appDirs.length; i++) {
       } else {
         appPort = appConfig.port;
       }
-      proxyRouter[appName + '.' + config.baseDomain] = '127.0.0.1:' + appConfig.port;
+      proxyRouter[appName + '.' + config.baseDomain] = '127.0.0.1:' + appPort;
       webapps.push(webapp);
     }
   }
