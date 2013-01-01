@@ -23,7 +23,7 @@
   ],
   "dependencies":{
     "http-proxy":"0.8.7",
-    "wbpjs":"2.0.0"
+    "wbpjs":"~2.0.1"
   },
   "devDependencies":{
     "grunt-contrib-clean":"0.3.1",

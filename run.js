@@ -15,7 +15,6 @@ var config = {
   nodeCmdName:'node',
   nodeAppRootPath:path.join(__dirname, '..'),
   baseDomain:'valtech-training.fr',
-//  baseDomain:'localdomain',
   proxyPort:3000,
   appsToScan:null
 };
