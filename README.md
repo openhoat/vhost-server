@@ -22,4 +22,4 @@ The recommended way is through the excellent [NPM](http://www.npmjs.org/):
 
     $ nodejs run
 
-## [See it in action](http://valtech-training.fr:3000/)
+## [See it in action](http://labs.valtech-training.fr/)
