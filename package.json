@@ -1,6 +1,6 @@
 {
   "name":"vhost-server",
-  "version":"0.0.8",
+  "version":"0.0.9",
   "description":"Virtual host proxy for nodejs apps and index webapp",
   "homepage": "https://github.com/openhoat/vhost-server",
   "main":"run.js",
@@ -23,7 +23,7 @@
   ],
   "dependencies":{
     "http-proxy":"0.8.7",
-    "wbpjs":"~2.0.4"
+    "wbpjs":"~2.0.5"
   },
   "devDependencies":{
     "grunt-contrib-clean":"0.3.1",
