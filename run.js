@@ -14,12 +14,15 @@ var config = {
   nodeBinDir:path.dirname(process.execPath),
   nodeCmdName:'node',
   nodeAppRootPath:path.join(__dirname, '..'),
-  baseDomain:'node.valtech-training.fr',
+  baseDomain:'js.valtech-training.fr',
 //  baseDomain:'localdomain',
-  proxyPort:3000,
+  proxyListenPort:3000,
+  proxyRedirectPort:80,
   appsToScan:null
 //  appsToScan:['wbpjs-todo']
 };
+
+config.proxyRedirectPort = config.proxyRedirectPort || config.proxyListenPort;
 
 var proxyRouter = {}
   , appDirs
@@ -72,7 +75,7 @@ for (var i = 0; i < appDirs.length; i++) {
         , appConfig = require(appConfigFile)
         , webapp = {
           name:appName,
-          url:'http://' + appName + '.' + config.baseDomain + ':' + config.proxyPort,
+          url:'http://' + appName + '.' + config.baseDomain + ':' + config.proxyRedirectPort,
           description:packageApp.description,
           sources:packageApp.homepage,
           process:null
@@ -106,6 +109,6 @@ var proxyServer = httpProxy.createServer({
   }
 });
 
-proxyServer.listen(config.proxyPort);
-console.log('Proxy server listening to port :', config.proxyPort);
+proxyServer.listen(config.proxyListenPort);
+console.log('Proxy server listening to port :', config.proxyListenPort);
 
