@@ -14,7 +14,7 @@ var config = {
   nodeBinDir:path.dirname(process.execPath),
   nodeCmdName:'node',
   nodeAppRootPath:path.join(__dirname, '..'),
-  baseDomain:'js.valtech-training.fr',
+  baseDomain:'labs.valtech-training.fr',
 //  baseDomain:'localdomain',
   proxyListenPort:3000,
   proxyRedirectPort:80,
