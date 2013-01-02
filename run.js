@@ -81,6 +81,7 @@ for (var i = 0; i < appDirs.length; i++) {
       webapp.process = child_process.spawn(nodeCmd, [ appMainFile ], {
         cwd:appDir,
         detached:true,
+        stdio: 'inherit',
         uid:process.getuid()
       });
       var appPort = getAppPort(appConfig);
