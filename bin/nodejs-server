@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env /usr/local/bin/node
 /*
 # chkconfig: 235 99 10
 # description: Start or stop the nodejs server
