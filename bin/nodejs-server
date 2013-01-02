@@ -1,4 +1,4 @@
-#!/usr/bin/env /opt/node/bin/node
+#!/usr/bin/env node
 /*
 # chkconfig: 235 99 10
 # description: Start or stop the nodejs server
@@ -13,4 +13,4 @@
 ### END INIT INFO
  */
 
-require(require('path').join(__dirname, '../lib/service.js'));
+require(require('path').join(__dirname, '..', 'lib', 'service.js'));
