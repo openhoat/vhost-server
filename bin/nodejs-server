@@ -13,4 +13,4 @@
 ### END INIT INFO
  */
 
-require(require('path').join(__dirname, '..', 'lib', 'service.js'));
+require(require('path').join(__dirname, '..', 'lib', 'system-service.js'));
