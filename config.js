@@ -4,7 +4,7 @@ var path = require('path')
     nodeBinDir:path.dirname(process.execPath),
     nodeCmdName:'node',
     nodeAppRootPath:path.join(__dirname, '..'),
-//    nodeAppUser:'node',
+//    nodeAppUserUid:506,
     baseDomain:'labs.valtech-training.fr',
 //    proxyListenPort:3000,
 //    proxyListenAddress: 'localhost',

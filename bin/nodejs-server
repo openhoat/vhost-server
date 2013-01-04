@@ -17,7 +17,7 @@
 NODE_HOME=/opt/node
 NODE_PATH=/opt/node/lib/node_modules
 NODE_CMD=$NODE_HOME/bin/node
-NODE_APP_USER=node
+NODE_APP_USER_UID=506
 NODE_ENV=production
 VHOST_SERVER_APP=/usr/local/nodejs/vhost-server/lib/system-service.js
 LISTEN_PORT=80
