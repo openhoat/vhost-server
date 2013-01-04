@@ -1,7 +1,9 @@
-#!/usr/bin/env /usr/local/bin/node
-/*
-# chkconfig: 235 99 10
-# description: Start or stop the nodejs server
+#!/bin/bash
+#
+# nodejs-server Startup script for the NodeJS Server
+#
+# chkconfig:    235 99 10
+# description:  Start or stop the nodejs server
 #
 ### BEGIN INIT INFO
 # Provides: nodejs-server
@@ -11,6 +13,19 @@
 # Default-Stop: 0 1 6
 # Description: Start or stop the nodejs server
 ### END INIT INFO
- */
 
-require(require('path').join(__dirname, '..', 'lib', 'system-service.js'));
+NODE_HOME=/opt/node
+NODE_PATH=/opt/node/lib/node_modules
+NODE_CMD=$NODE_HOME/bin/node
+NODE_ENV=production
+VHOST_SERVER_APP=/usr/local/nodejs/vhost-server/lib/system-service.js
+
+if [ -f /etc/sysconfig/nodejs-server ]; then
+        . /etc/sysconfig/nodejs-server
+fi
+
+export NODE_HOME NODE_PATH NODE_ENV
+
+$NODE_CMD $VHOST_SERVER_APP $*
+
+#require(require('path').join(__dirname, '..', 'lib', 'system-service.js'));
