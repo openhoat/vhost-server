@@ -17,6 +17,7 @@
 NODE_HOME=/opt/node
 NODE_PATH=/opt/node/lib/node_modules
 NODE_CMD=$NODE_HOME/bin/node
+NODE_APP_USER=node
 NODE_ENV=production
 VHOST_SERVER_APP=/usr/local/nodejs/vhost-server/lib/system-service.js
 LISTEN_PORT=80
@@ -25,7 +26,7 @@ if [ -f /etc/sysconfig/nodejs-server ]; then
         . /etc/sysconfig/nodejs-server
 fi
 
-export NODE_HOME NODE_PATH NODE_ENV LISTEN_PORT
+export NODE_HOME NODE_PATH NODE_ENV LISTEN_PORT NODE_APP_USER
 
 $NODE_CMD $VHOST_SERVER_APP $*
 
