@@ -6,7 +6,7 @@ var path = require('path')
     nodeAppRootPath:path.join(__dirname, '..'),
     baseDomain:'labs.valtech-training.fr',
     proxyListenPort:3000,
-    proxyListenAddress: 'localhost',
+//    proxyListenAddress: 'localhost',
     proxyRealPort:80,
 //    appsToScan:['wbpjs-todo'],
     pidDir:'/var/run',
