@@ -29,5 +29,3 @@ fi
 export NODE_HOME NODE_PATH NODE_ENV LISTEN_PORT NODE_APP_USER
 
 $NODE_CMD $VHOST_SERVER_APP $*
-
-#require(require('path').join(__dirname, '..', 'lib', 'system-service.js'));
