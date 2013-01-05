@@ -1,8 +1,8 @@
 var wbp = require('wbpjs')
-  , config = require(wbp.findAppFile('config.js'));
+  , config = wbp.requireAppFile('config');
 
 wbp.configure(config);
 
-require(wbp.findAppFile('lib', 'vhost-proxy-server.js'));
+wbp.requireAppFile('lib', 'vhost-proxy-server');
 
 wbp.start();
