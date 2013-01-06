@@ -5,16 +5,16 @@ var path = require('path')
     nodeCmdName:'node',
     nodeAppRootPath:path.join(__dirname, '..'),
 //    nodeAppUserUid:506,
-    baseDomain:'labs.valtech-training.fr',
+    //    baseDomain:'labs.valtech-training.fr',
 //    proxyListenPort:3000,
 //    proxyListenAddress: 'localhost',
 //    proxyRealPort:80,
-//    appsToScan:['wbpjs-todo'],
+    appsToScan:['wbpjs-todo'],
     pidDir:'/var/run',
     logDir:'/var/log',
     plugins:{
-      'wbpjs-mvc':{
-        type:'wbpjs-mvc',
+      'mvc':{
+        type:'mvc',
         config:{
           port:3099,
           renderFormats:['html'],
