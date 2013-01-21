@@ -6,10 +6,11 @@ var path = require('path')
     nodeAppRootPath:path.join(__dirname, '..'),
 //    nodeAppUserUid:506,
     baseDomain:'labs.valtech-training.fr',
+//    baseDomain:'localdomain',
 //    proxyListenPort:3000,
 //    proxyListenAddress: 'localhost',
 //    proxyRealPort:80,
-//    appsToScan:['wbpjs-todo'],
+//    appsToScan:['wbpjs-todo','wbpjs-chat'],
     pidDir:'/var/run',
     logDir:'/var/log',
     plugins:{
