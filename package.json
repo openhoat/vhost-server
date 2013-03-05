@@ -1,6 +1,6 @@
 {
   "name":"vhost-server",
-  "version":"0.1.3",
+  "version":"0.1.4",
   "description":"Virtual host proxy for nodejs apps and index webapp",
   "homepage": "https://github.com/openhoat/vhost-server",
   "main":"run.js",
