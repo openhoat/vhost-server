@@ -22,7 +22,7 @@
     }
   ],
   "dependencies":{
-    "http-proxy":"0.8.7",
+    "http-proxy":"1.18.1",
     "wbpjs":"~2.3.5"
   },
   "devDependencies":{
